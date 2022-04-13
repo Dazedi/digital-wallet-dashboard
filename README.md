@@ -4,9 +4,13 @@
 
 Vite + React + Material UI
 
+Why Vite instead of rollup, webpack or parcel? It's new and I wanted to try it out.
+
 ## Server
 
 NodeJS + NestJS
+
+Why NestJS? I hadn't used it before and it seemed interesting so I decided to try it out.
 
 ## Development
 
