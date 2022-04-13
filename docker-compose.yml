@@ -1,0 +1,27 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  server:
+    image: node:16-alpine
+    command: yarn run start:dev
+    working_dir: /code
+    volumes:
+      - ./server:/code
+    ports:
+      - 3001:3000
+  client:
+    image: node:16-alpine
+    working_dir: /code
+    command: yarn dev --host
+    volumes:
+      - ./client:/code
+    ports:
+      - 3000:3000
+  # web:
+  #   build: .
+  #   ports:
+  #     - "8000:5000"
+  #   volumes:
+  #     - .:/code
+  #     - logvolume01:/var/log
+  #   links:
+  #     - redis
