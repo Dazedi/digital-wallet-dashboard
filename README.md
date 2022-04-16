@@ -1,5 +1,9 @@
 # Digital wallet dashboard
 
+## Design
+
+In UI design, the icon buttons seem to use font awesome icons.
+
 ## Client
 
 Vite + React + Material UI

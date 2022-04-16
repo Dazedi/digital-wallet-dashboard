@@ -3,7 +3,15 @@ import { IsNotEmpty, Min, IsNumber, IsString } from 'class-validator';
 export class CreateExchangeDto {
     @IsNotEmpty()
     @IsString()
-    currency: string;
+    id: string;
+
+    @IsNotEmpty()
+    @IsString()
+    symbol: string;
+
+    @IsNotEmpty()
+    @IsString()
+    name: string;
     
     @IsNotEmpty()
     @IsNumber()
