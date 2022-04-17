@@ -1,17 +1,11 @@
-import {
-  AppBar,
-  CssBaseline,
-  Toolbar,
-  Typography,
-  Box,
-} from "@mui/material";
-import Router from "./Router";
+import { AppBar, CssBaseline, Toolbar, Typography, Box } from '@mui/material';
+import Router from './Router';
 
 function App() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar 
+      <AppBar
         position="fixed"
         sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       >

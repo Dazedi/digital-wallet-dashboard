@@ -1,7 +1,7 @@
-import React from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
-import { routes } from "./Routes";
-import { Nav } from "./Nav";
+import React from 'react';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import { routes } from './Routes';
+import { Nav } from './Nav';
 
 export const Router = () => {
   return (
@@ -13,7 +13,7 @@ export const Router = () => {
         ))}
       </Routes>
     </HashRouter>
-  )
+  );
 };
 
 export default Router;

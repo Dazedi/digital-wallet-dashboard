@@ -1,9 +1,9 @@
-import { forwardRef, ReactElement, useMemo } from "react";
-import { ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { forwardRef, ReactElement, useMemo } from 'react';
+import { ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import {
   Link as RouterLink,
   LinkProps as RouterLinkProps,
-} from "react-router-dom";
+} from 'react-router-dom';
 
 interface ListItemLinkProps {
   icon?: ReactElement;
@@ -16,10 +16,10 @@ export const ListItemLink = (props: ListItemLinkProps) => {
 
   const renderLink = useMemo(
     () =>
-      forwardRef<HTMLAnchorElement, Omit<RouterLinkProps, "to">>(
-        (itemProps, ref) => <RouterLink to={to} ref={ref} {...itemProps} />
+      forwardRef<HTMLAnchorElement, Omit<RouterLinkProps, 'to'>>(
+        (itemProps, ref) => <RouterLink to={to} ref={ref} {...itemProps} />,
       ),
-    [to]
+    [to],
   );
 
   return (

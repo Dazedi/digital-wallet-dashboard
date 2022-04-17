@@ -8,6 +8,7 @@ import {
 } from '@nestjs/common';
 import { ExchangeService } from '../exchange/exchange.service';
 import { WalletService } from './wallet.service';
+import { GetBalanceDto } from './dto/get-balance.dto';
 
 @Controller('wallet')
 export class WalletController {
@@ -19,20 +20,17 @@ export class WalletController {
   @Get(':address/balance')
   async getBalance(
     @Param('address') address: string,
-    @Query('currencyId') currencyId: string,
+    @Query() query: GetBalanceDto,
   ) {
     const result = await this.walletService.getBalance(address);
 
     if (result.data.status !== '1') {
-      throw new HttpException(result.data.message, HttpStatus.BAD_REQUEST);
+      throw new HttpException(result.data.result, HttpStatus.BAD_REQUEST);
     }
 
-    const eth = parseInt(result.data.result, 10) / 1000000000000000000;
-    
-    console.log('wei', result.data.result);
-    console.log('etc', eth);
+    const eth = parseFloat(result.data.result) / 1000000000000000000;
 
-    const exchange = this.exchangeService.get(currencyId);
+    const exchange = this.exchangeService.get(query.currency.toUpperCase());
 
     if (!exchange) {
       throw new HttpException(
@@ -41,7 +39,7 @@ export class WalletController {
       );
     }
 
-    return eth * exchange.rate;
+    return eth / exchange.rate;
   }
 
   @Get(':address/isOld')

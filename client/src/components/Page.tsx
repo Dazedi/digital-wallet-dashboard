@@ -1,4 +1,4 @@
-import { Box, BoxProps, Toolbar } from "@mui/material";
+import { Box, BoxProps, Toolbar } from '@mui/material';
 
 interface PageProps {
   children: React.ReactNode;
@@ -6,20 +6,17 @@ interface PageProps {
 }
 
 export const Page = ({ children, sx }: PageProps) => {
-  console.log("sx", sx)
   return (
     <Box
-      component={"main"}
-      sx={{ 
+      component={'main'}
+      sx={{
         flexGrow: 1,
       }}
     >
       <Toolbar />
-      <Box sx={{ p: 3, flexGrow: 1, ...(sx ? sx : {})}}>
-        { children }
-      </Box>
+      <Box sx={{ p: 3, flexGrow: 1, ...(sx ? sx : {}) }}>{children}</Box>
     </Box>
-  )
-}
+  );
+};
 
 export default Page;

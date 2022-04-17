@@ -3,14 +3,13 @@ import Help from '@pages/Help';
 
 export const routes = [
   {
-    path: "/",
-    label: "Dashboard",
+    path: '/',
+    label: 'Dashboard',
     component: <Dashboard />,
   },
   {
-    path: "/help",
-    label: "Help",
+    path: '/help',
+    label: 'Help',
     component: <Help />,
   },
 ];
-

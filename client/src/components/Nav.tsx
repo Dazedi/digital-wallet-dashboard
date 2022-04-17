@@ -1,6 +1,6 @@
-import { Drawer, List, Box, Toolbar } from "@mui/material";
-import { ListItemLink } from "./ListItemLink";
-import { routes } from "./routes";
+import { Drawer, List, Box, Toolbar } from '@mui/material';
+import { ListItemLink } from './ListItemLink';
+import { routes } from './routes';
 
 const drawerWidth = 200;
 
@@ -11,7 +11,7 @@ export const Nav = () => {
       sx={{
         width: drawerWidth,
         flexShrink: 0,
-        [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: "border-box" },
+        [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
       }}
     >
       <Toolbar />

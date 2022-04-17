@@ -1,16 +1,13 @@
 import {
   Controller,
-  Res,
   Get,
   Put,
   Body,
   Post,
   Delete,
   Param,
-  HttpStatus,
-  HttpException,
 } from '@nestjs/common';
-import { ExchangeEntity, ExchangeService } from './exchange.service';
+import { ExchangeService } from './exchange.service';
 import { CreateExchangeDto } from './dto/create-exchange.dto';
 import { UpdateExchangeDto } from './dto/update-exchange.dto';
 

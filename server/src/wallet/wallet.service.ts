@@ -2,47 +2,11 @@ import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { lastValueFrom } from 'rxjs';
-
-type EtherscanResponse<T = any> = {
-  status: string;
-  message: string;
-  result: T;
-};
-
-type BalanceResponse = EtherscanResponse<string>;
-
-type Transaction = {
-  blockNumber: string;
-  timeStamp: string;
-  hash: string;
-  nonce: string;
-  blockHash: string;
-  transactionIndex: string;
-  from: string;
-  to: string;
-  value: string;
-  gas: string;
-  gasPrice: string;
-  isError: string;
-  txreceipt_status: string;
-  input: string;
-  contractAddress: string;
-  cumulativeGasUsed: string;
-  gasUsed: string;
-  confirmations: string;
-};
-
-type TransactionList = Transaction[];
-
-type TransactionListResponse = EtherscanResponse<TransactionList>;
-
-type TransactionListRequestParams = {
-  startBlock?: number;
-  endBlock?: number;
-  page?: number;
-  offset?: number;
-  sort?: string;
-};
+import {
+  BalanceResponse,
+  TransactionListRequestParams,
+  TransactionListResponse,
+} from './wallet.interface';
 
 @Injectable()
 export class WalletService {
@@ -55,10 +19,7 @@ export class WalletService {
   constructor(
     private configService: ConfigService,
     private httpService: HttpService,
-  ) {
-    // this.client = init(configService.get<string>('ETHERSCAN_API_KEY'));
-    // console.log(this.client);
-  }
+  ) {}
 
   public async getBalance(address: string, tag?: string) {
     const url = this.accountUrl;
